@@ -12,7 +12,7 @@ features:
   - studio
 
 requires:
-  - seeed_xiao_ble
+  - seeeduino_xiao_ble
 
 siblings:
   - neodoxzmk_left
