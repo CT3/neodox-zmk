@@ -1,6 +1,0 @@
----
-include:
-  - board: seeed_xiao
-    shield: neodoxzmk_left
-  - board: seeed_xiao
-    shield: neodoxzmk_right
