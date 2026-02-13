@@ -5,6 +5,7 @@
 
 / {
     /* Macro to trigger the Euro symbol (€) via Right Alt + 5 */
+    /* Fixed macro syntax for GitHub Actions build - 2026-02-13 */
     macros {
         euro_sign: euro_sign {
             compatible = "zmk,behavior-macro";
