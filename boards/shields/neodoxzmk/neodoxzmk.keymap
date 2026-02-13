@@ -4,39 +4,39 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-/* Macro to trigger the Euro symbol (€) via Right Alt + 5 */
     macros {
         euro_sign: euro_sign {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_press &kp RALT>, <&macro_tap &kp N5>, <&macro_release &kp RALT>;
         };
+
+        /* Lithuanian Macros + Auto-Return to Layer 0 */
+        lt_a:  lt_a  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp RALT>, <&macro_tap &kp A>, <&macro_release &kp RALT>, <&to 0>; };
+        lt_c:  lt_c  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp RALT>, <&macro_tap &kp C>, <&macro_release &kp RALT>, <&to 0>; };
+        lt_e:  lt_e  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp RALT>, <&macro_tap &kp E>, <&macro_release &kp RALT>, <&to 0>; };
+        lt_ee: lt_ee { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp RALT>, <&macro_tap &kp V>, <&macro_release &kp RALT>, <&to 0>; };
+        lt_i:  lt_i  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp RALT>, <&macro_tap &kp I>, <&macro_release &kp RALT>, <&to 0>; };
+        lt_s:  lt_s  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp RALT>, <&macro_tap &kp S>, <&macro_release &kp RALT>, <&to 0>; };
+        lt_u:  lt_u  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp RALT>, <&macro_tap &kp U>, <&macro_release &kp RALT>, <&to 0>; };
+        lt_uu: lt_uu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp RALT>, <&macro_tap &kp W>, <&macro_release &kp RALT>, <&to 0>; };
+        lt_z:  lt_z  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp RALT>, <&macro_tap &kp Z>, <&macro_release &kp RALT>, <&to 0>; };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        /* ------------------------- LAYER 0: DEFAULT (COLEMAK-ISH) -------------------------
-         * | TAB  |  Q  |  W  |  F  |  P  |  B  |        |  J  |  L  |  U  |  Y  |  ;  | BKSP |
-         * | ESC  |  A  |  R  |  S  |  T  |  G  |        |  M  |  N  |  E  |  I  |  O  | GUI  |
-         * | SHFT |  Z  |  X  |  C  |  D  |  V  |        |  K  |  H  |  ,  |  .  |  /  | MO(1)|
-         * |            | SPC | ALT | CTRL|        | BKSP| MO(2)| ENT |
-         */
+        /* LAYER 0: DEFAULT */
         default_layer {
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp F      &kp P      &kp B                   &kp J          &kp L  &kp U      &kp Y    &kp SEMI  &kp BSPC
-&kp ESC    &kp A  &kp R  &kp S      &kp T      &kp G                   &kp M          &kp N  &kp E      &kp I    &kp O     &kp LGUI
-&kp LSHFT  &kp Z  &kp X  &kp C      &kp D      &kp V                   &kp K          &kp H  &kp COMMA  &kp DOT  &kp FSLH  &mo 1
-                         &kp SPACE  &kp LALT   &kp LCTRL               &kp BSPC       &mo 2  &kp ENTER
+&kp TAB    &kp Q  &kp W  &kp F      &kp P      &kp B                    &kp J          &kp L  &kp U      &kp Y    &kp SEMI  &kp BSPC
+&kp ESC    &kp A  &kp R  &kp S      &kp T      &kp G                    &kp M          &kp N  &kp E      &kp I    &kp O     &kp LGUI
+&kp LSHFT  &kp Z  &kp X  &kp C      &kp D      &kp V                    &kp K          &kp H  &kp COMMA  &kp DOT  &kp FSLH  &mo 1
+                         &kp SPACE  &kp LALT   &kp LCTRL                &kp BSPC       &mo 2  &kp ENTER
             >;
         };
 
-        /* ------------------------- LAYER 1: LOWER (NUMPAD / F-KEYS) ------------------------
-         * | TAB    | F1  | F2  | F3  | F4  | F5  |        |  * |  +  |  7  |  8  |  9  | CALC |
-         * | BT_CLR | F6  | F7  | F8  | F9  | F10 |        |  /  |  -  |  4  |  5  |  6  |  .   |
-         * | SHFT   | F1  | F2  | F3  | F4  | F5  |        |  %  |  0  |  1  |  2  |  3  | trans|
-         * |              | trans| trans| trans|      | trans| trans| trans|
-         */
+        /* LAYER 1: LOWER */
         lower_layer {
             bindings = <
 &kp TAB     &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                 &kp ASTRK  &kp PLUS   &kp N7  &kp N8  &kp N9  &kp K_CALC
@@ -46,33 +46,33 @@
             >;
         };
 
-        /* ------------------------- LAYER 2: RAISE (SYMBOLS / NAV) --------------------------
-         * | TO(3) |  !  |  @  |  #  |  $  |  {  |        |  }  |  -  |  * |  (  |  )  | BKSP |
-         * | TO(0) |  %  |  &  |  ~  |  * |  (  |        |  )  | LFT | DWN |  UP | RGT | SNAP |
-         * | SHFT  |  _  |  ^  |  €  | trans| [  |        |  ]  |  '  |  "  |  `  |  \  |  ~   |
-         * |              | trans| trans| trans|      | trans| trans| trans|
-         */
+        /* LAYER 2: RAISE */
         raise_layer {
             bindings = <
 &to 3      &kp EXCL        &kp AT    &kp HASH   &kp DLLR   &kp LBRC      &kp RBRC  &kp MINUS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
 &to 0      &kp PRCNT       &kp AMPS  &kp TILDE  &kp ASTRK  &kp LPAR      &kp RPAR  &kp LEFT   &kp DOWN         &kp UP    &kp RIGHT &kp LS(LG(GRAVE))
-&kp LSHFT  &kp UNDERSCORE  &kp CARET &euro_sign &trans     &kp LBKT      &kp RBKT  &kp SQT    &kp DQT          &kp GRAVE &kp BSLH  &kp TILDE
+&kp LSHFT  &kp UNDERSCORE  &kp CARET &euro_sign &sl 4      &kp LBKT      &kp RBKT  &kp SQT    &kp DQT          &kp GRAVE &kp BSLH  &kp TILDE
                                      &trans     &trans     &trans        &trans    &trans     &trans
             >;
         };
 
-        /* ------------------------- LAYER 3: POWER/SYSTEM ---------------------------------
-         * | RESET | BT_0 | BT_1 | BT_2 | PRNT |      |      |      |      |      |      |      |
-         * | TO(0) |BT_CLR|      |      |      |      |      | USB  | BLE  |      |      |      |
-         * | SHFT  | LOCK | SLEEP|      |      |      |      | MUTE | VOL- | VOL+ |      | BOOT |
-         * |              | trans| trans| trans|      | trans| trans| trans|
-         */
+        /* LAYER 3: POWER */
         power_layer {
             bindings = <
-&sys_reset  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &kp PSCRN     &none          &none         &none         &none         &none         &none  &none
-&to 0       &bt BT_CLR    &none         &none         &none         &none          &out OUT_USB  &out OUT_BLE  &none         &none         &none  &none
-&kp LSHFT   &kp LG(L)     &kp K_SLEEP   &none         &none         &none          &none         &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &none  &bootloader
-                                        &trans        &trans        &trans         &trans        &trans        &trans
+&sys_reset  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &kp PSCRN      &none          &none          &none         &none         &none         &none  &none
+&to 0        &bt BT_CLR    &none         &none         &none          &none          &out OUT_USB   &out OUT_BLE  &none         &none         &none  &none
+&kp LSHFT    &kp LG(L)     &kp K_SLEEP   &none         &none          &none          &none          &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &none  &bootloader
+                                        &trans        &trans         &trans         &trans         &trans        &trans
+            >;
+        };
+
+        /* LAYER 4: LITHUANIAN (Sticky/One-Shot) */
+        lithuanian_layer {
+            bindings = <
+&none      &none     &none     &none     &none     &none          &none     &none     &lt_uu    &lt_u     &none     &kp BSPC
+&none      &lt_a     &none     &lt_s     &none     &none          &none     &lt_ee    &lt_e     &lt_i     &none     &none
+&kp LSHFT  &lt_z     &none     &lt_c     &none     &none          &none     &none     &none     &none     &none     &none
+                               &trans    &trans    &trans         &trans    &trans    &trans
             >;
         };
     };
