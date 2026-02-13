@@ -11,6 +11,7 @@
             #binding-cells = <0>;
             bindings = <&macro_press &kp RALT>, <&macro_tap &kp N5>, <&macro_release &kp RALT>;
         };
+    };
 
     keymap {
         compatible = "zmk,keymap";
