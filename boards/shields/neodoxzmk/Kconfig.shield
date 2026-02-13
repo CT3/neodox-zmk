@@ -1,0 +1,5 @@
+config SHIELD_NEODOXZMK_LEFT
+    def_bool $(shields_list_contains,neodoxzmk_left)
+
+config SHIELD_NEODOXZMK_RIGHT
+    def_bool $(shields_list_contains,neodoxzmk_right)

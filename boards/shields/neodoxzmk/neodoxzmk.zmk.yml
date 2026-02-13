@@ -1,0 +1,18 @@
+file_format: "1"
+id: neodoxzmk
+name: Neodox
+type: shield
+
+url: https://github.com/username/neodox
+
+features:
+  - keys
+  - underglow
+  - studio
+
+requires:
+  - seeed_xiao
+
+siblings:
+  - neodoxzmk_left
+  - neodoxzmk_right

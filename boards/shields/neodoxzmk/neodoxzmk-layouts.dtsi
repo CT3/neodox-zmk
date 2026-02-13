@@ -1,0 +1,65 @@
+// See https://zmk.dev/docs/development/hardware-integration/physical-layouts
+// for how to configure this.
+
+#include <physical_layouts.dtsi>
+
+/ {
+    default_layout: default_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "Neodox Layout";
+        transform = <&default_transform>;
+        kscan = <&kscan>;
+
+        // Edit this to define the positions and sizes of the keys, or remove it
+        // if your keyboard will not support ZMK Studio.
+        // https://zmk.dev/docs/development/hardware-integration/physical-layouts#optional-keys-property
+        keys
+            // Row 1 (12 keys)
+            = <&key_physical_attrs 56 56   0   0   0   0   0>   // SW1
+            , <&key_physical_attrs 56 56  56   0   0   0   0>   // SW2
+            , <&key_physical_attrs 56 56 112   0   0   0   0>   // SW3
+            , <&key_physical_attrs 56 56 168   0   0   0   0>   // SW4
+            , <&key_physical_attrs 56 56 224   0   0   0   0>   // SW5
+            , <&key_physical_attrs 56 56 280   0   0   0   0>   // SW6
+            , <&key_physical_attrs 56 56 336   0   0   0   0>   // SW6 (right)
+            , <&key_physical_attrs 56 56 392   0   0   0   0>   // SW5 (right)
+            , <&key_physical_attrs 56 56 448   0   0   0   0>   // SW4 (right)
+            , <&key_physical_attrs 56 56 504   0   0   0   0>   // SW3 (right)
+            , <&key_physical_attrs 56 56 560   0   0   0   0>   // SW2 (right)
+            , <&key_physical_attrs 56 56 616   0   0   0   0>   // SW1 (right)
+            // Row 2 (12 keys)
+            , <&key_physical_attrs 56 56   0  56   0   0   0>   // SW7
+            , <&key_physical_attrs 56 56  56  56   0   0   0>   // SW8
+            , <&key_physical_attrs 56 56 112  56   0   0   0>   // SW9
+            , <&key_physical_attrs 56 56 168  56   0   0   0>   // SW10
+            , <&key_physical_attrs 56 56 224  56   0   0   0>   // SW11
+            , <&key_physical_attrs 56 56 280  56   0   0   0>   // SW12
+            , <&key_physical_attrs 56 56 336  56   0   0   0>   // SW12 (right)
+            , <&key_physical_attrs 56 56 392  56   0   0   0>   // SW11 (right)
+            , <&key_physical_attrs 56 56 448  56   0   0   0>   // SW10 (right)
+            , <&key_physical_attrs 56 56 504  56   0   0   0>   // SW9 (right)
+            , <&key_physical_attrs 56 56 560  56   0   0   0>   // SW8 (right)
+            , <&key_physical_attrs 56 56 616  56   0   0   0>   // SW7 (right)
+            // Row 3 (12 keys)
+            , <&key_physical_attrs 56 56   0 112   0   0   0>   // SW13
+            , <&key_physical_attrs 56 56  56 112   0   0   0>   // SW14
+            , <&key_physical_attrs 56 56 112 112   0   0   0>   // SW15
+            , <&key_physical_attrs 56 56 168 112   0   0   0>   // SW16
+            , <&key_physical_attrs 56 56 224 112   0   0   0>   // SW17
+            , <&key_physical_attrs 56 56 280 112   0   0   0>   // SW18
+            , <&key_physical_attrs 56 56 336 112   0   0   0>   // SW18 (right)
+            , <&key_physical_attrs 56 56 392 112   0   0   0>   // SW17 (right)
+            , <&key_physical_attrs 56 56 448 112   0   0   0>   // SW16 (right)
+            , <&key_physical_attrs 56 56 504 112   0   0   0>   // SW15 (right)
+            , <&key_physical_attrs 56 56 560 112   0   0   0>   // SW14 (right)
+            , <&key_physical_attrs 56 56 616 112   0   0   0>   // SW13 (right)
+            // Row 4 (6 keys, thumb cluster)
+            , <&key_physical_attrs 56 56 168 168   0   0   0>   // SW19
+            , <&key_physical_attrs 56 56 224 168   0   0   0>   // SW20
+            , <&key_physical_attrs 56 56 280 168   0   0   0>   // SW21
+            , <&key_physical_attrs 56 56 336 168   0   0   0>   // SW21 (right)
+            , <&key_physical_attrs 56 56 392 168   0   0   0>   // SW20 (right)
+            , <&key_physical_attrs 56 56 448 168   0   0   0>   // SW19 (right)
+            ;
+    };
+};
