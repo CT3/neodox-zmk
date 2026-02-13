@@ -9,7 +9,7 @@
         euro_sign: euro_sign {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <¯o_press &kp RALT>, <¯o_tap &kp N5>, <¯o_release &kp RALT>;
+            bindings = <¯o_press             bindings = <¯o_press &kp RALT>, <¯o_tap &kp N5>, <¯o_release &kp RALT>;kp RALT>, <¯o_tap             bindings = <¯o_press &kp RALT>, <¯o_tap &kp N5>, <¯o_release &kp RALT>;kp N5>, <¯o_release             bindings = <¯o_press &kp RALT>, <¯o_tap &kp N5>, <¯o_release &kp RALT>;kp RALT>;
         };
     };
 
