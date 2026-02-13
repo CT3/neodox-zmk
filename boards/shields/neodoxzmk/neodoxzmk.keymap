@@ -9,7 +9,7 @@
         euro_sign: euro_sign {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <macro_press &kp RALT>, <macro_tap &kp N5>, <macro_release &kp RALT>;
+            bindings = <&macro_press &kp RALT>, <&macro_tap &kp N5>, <&macro_release &kp RALT>;
         };
 
     keymap {
