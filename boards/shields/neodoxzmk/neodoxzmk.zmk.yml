@@ -1,7 +1,8 @@
 file_format: "1"
 id: neodoxzmk
-name: Neodox
+name: Neodox ZMK
 type: shield
+version: 1.0.0
 
 url: https://github.com/username/neodox
 
@@ -16,3 +17,7 @@ requires:
 siblings:
   - neodoxzmk_left
   - neodoxzmk_right
+
+firmware:
+  name: neodoxzmk
+  source: ./
