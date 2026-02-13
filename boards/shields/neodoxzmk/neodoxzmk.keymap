@@ -6,15 +6,13 @@
 / {
     /* Macro to trigger the Euro symbol (€) via Right Alt + 5 */
     /* Fixed macro syntax for GitHub Actions build - 2026-02-13 */
-    /* Commenting out macro due to build issues
     macros {
         euro_sign: euro_sign {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <¯o_press &kp RALT>, <¯o_tap &kp N5>, <¯o_release &kp RALT>;
+            bindings = <&_press &kp RALT>, <&_tap &kp N5>, <&_release &kp RALT>;
         };
     };
-    */
 
     keymap {
         compatible = "zmk,keymap";
