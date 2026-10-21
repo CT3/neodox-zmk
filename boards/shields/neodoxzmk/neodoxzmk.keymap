@@ -49,7 +49,7 @@
         /* LAYER 2: RAISE */
         raise_layer {
             bindings = <
-&to 3      &kp EXCL        &kp AT    &kp HASH   &kp DLLR   &kp LBRC      &kp RBRC  &kp MINUS  &kp EQUAL        &kp LPAR  &kp RPAR  &kp BSPC
+&to 3      &kp EXCL        &kp AT    &kp HASH   &kp DLLR   &kp LBRC      &kp RBRC  &kp MINUS  &kp EQUAL        &none     &none     &kp BSPC
 &to 0      &kp PRCNT       &kp AMPS  &kp TILDE  &kp ASTRK  &kp LPAR      &kp RPAR  &kp LEFT   &kp DOWN         &kp UP    &kp RIGHT &kp LS(LG(GRAVE))
 &kp LSHFT  &kp UNDERSCORE  &kp CARET &euro_sign &sl 4      &kp LBKT      &kp RBKT  &kp SQT    &kp DQT          &kp GRAVE &kp BSLH  &kp TILDE
                                      &trans     &trans     &trans        &trans    &trans     &trans
