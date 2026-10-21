@@ -4,8 +4,8 @@
 
 // Pinout per NeodoxHW v1.1 (both halves wired identically, COL1 = innermost column):
 //   ROW1 D3, ROW2 D2, ROW3 D1, ROW4 D0 (thumbs, COL1-COL3 only)
-//   COL1 D7, COL2 D8, COL3 D9, COL4 D10, COL5 D6, COL6 NFC1 (P0.09)
-//   I2C header: SDA D4, SCL D5, INT1 NFC2 (P0.10)
+//   COL1 D7, COL2 D8, COL3 D9, COL4 D10, COL5 D6, COL6 NFC2 (P0.10)
+//   I2C header: SDA D4, SCL D5, INT1 NFC1 (P0.09)
 
 / {
     chosen {

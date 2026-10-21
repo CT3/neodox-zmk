@@ -3,7 +3,7 @@
 // Outer to inner: COL6 .. COL1
 &kscan {
     col-gpios
-        = <&gpio0 9 GPIO_ACTIVE_HIGH>
+        = <&gpio0 10 GPIO_ACTIVE_HIGH>
         , <&xiao_d 6 GPIO_ACTIVE_HIGH>
         , <&xiao_d 10 GPIO_ACTIVE_HIGH>
         , <&xiao_d 9 GPIO_ACTIVE_HIGH>
