@@ -4,23 +4,42 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
+    /* Unicode via macOS "Unicode Hex Input" layout: hold Option and type the code point */
     macros {
-        euro_sign: euro_sign {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp RALT>, <&macro_tap &kp N5>, <&macro_release &kp RALT>;
-        };
+        euro_sign: euro_sign { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp N2 &kp N0 &kp A &kp C>, <&macro_release &kp LALT>; };
 
-        /* Lithuanian Macros + Auto-Return to Layer 0 */
-        lt_a:  lt_a  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp RALT>, <&macro_tap &kp A>, <&macro_release &kp RALT>, <&to 0>; };
-        lt_c:  lt_c  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp RALT>, <&macro_tap &kp C>, <&macro_release &kp RALT>, <&to 0>; };
-        lt_e:  lt_e  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp RALT>, <&macro_tap &kp E>, <&macro_release &kp RALT>, <&to 0>; };
-        lt_ee: lt_ee { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp RALT>, <&macro_tap &kp V>, <&macro_release &kp RALT>, <&to 0>; };
-        lt_i:  lt_i  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp RALT>, <&macro_tap &kp I>, <&macro_release &kp RALT>, <&to 0>; };
-        lt_s:  lt_s  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp RALT>, <&macro_tap &kp S>, <&macro_release &kp RALT>, <&to 0>; };
-        lt_u:  lt_u  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp RALT>, <&macro_tap &kp U>, <&macro_release &kp RALT>, <&to 0>; };
-        lt_uu: lt_uu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp RALT>, <&macro_tap &kp W>, <&macro_release &kp RALT>, <&to 0>; };
-        lt_z:  lt_z  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp RALT>, <&macro_tap &kp Z>, <&macro_release &kp RALT>, <&to 0>; };
+        /* Lithuanian Macros (lowercase / uppercase) + Auto-Return to Layer 0 */
+        lt_a_lo: lt_a_lo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N1 &kp N0 &kp N5>, <&macro_release &kp LALT>, <&to 0>; };
+        lt_a_up: lt_a_up { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N1 &kp N0 &kp N4>, <&macro_release &kp LALT>, <&to 0>; };
+        lt_c_lo: lt_c_lo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N1 &kp N0 &kp D>, <&macro_release &kp LALT>, <&to 0>; };
+        lt_c_up: lt_c_up { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N1 &kp N0 &kp C>, <&macro_release &kp LALT>, <&to 0>; };
+        lt_e_lo: lt_e_lo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N1 &kp N1 &kp N9>, <&macro_release &kp LALT>, <&to 0>; };
+        lt_e_up: lt_e_up { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N1 &kp N1 &kp N8>, <&macro_release &kp LALT>, <&to 0>; };
+        lt_ee_lo: lt_ee_lo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N1 &kp N1 &kp N7>, <&macro_release &kp LALT>, <&to 0>; };
+        lt_ee_up: lt_ee_up { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N1 &kp N1 &kp N6>, <&macro_release &kp LALT>, <&to 0>; };
+        lt_i_lo: lt_i_lo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N1 &kp N2 &kp F>, <&macro_release &kp LALT>, <&to 0>; };
+        lt_i_up: lt_i_up { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N1 &kp N2 &kp E>, <&macro_release &kp LALT>, <&to 0>; };
+        lt_s_lo: lt_s_lo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N1 &kp N6 &kp N1>, <&macro_release &kp LALT>, <&to 0>; };
+        lt_s_up: lt_s_up { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N1 &kp N6 &kp N0>, <&macro_release &kp LALT>, <&to 0>; };
+        lt_u_lo: lt_u_lo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N1 &kp N7 &kp N3>, <&macro_release &kp LALT>, <&to 0>; };
+        lt_u_up: lt_u_up { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N1 &kp N7 &kp N2>, <&macro_release &kp LALT>, <&to 0>; };
+        lt_uu_lo: lt_uu_lo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N1 &kp N6 &kp B>, <&macro_release &kp LALT>, <&to 0>; };
+        lt_uu_up: lt_uu_up { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N1 &kp N6 &kp A>, <&macro_release &kp LALT>, <&to 0>; };
+        lt_z_lo: lt_z_lo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N1 &kp N7 &kp E>, <&macro_release &kp LALT>, <&to 0>; };
+        lt_z_up: lt_z_up { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&macro_press &kp LALT>, <&macro_tap &kp N0 &kp N1 &kp N7 &kp D>, <&macro_release &kp LALT>, <&to 0>; };
+    };
+
+    behaviors {
+        /* Lithuanian letters: Shift picks uppercase */
+        lt_a: lt_a { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&lt_a_lo>, <&lt_a_up>; mods = <(MOD_LSFT|MOD_RSFT)>; };  /* ą Ą */
+        lt_c: lt_c { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&lt_c_lo>, <&lt_c_up>; mods = <(MOD_LSFT|MOD_RSFT)>; };  /* č Č */
+        lt_e: lt_e { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&lt_e_lo>, <&lt_e_up>; mods = <(MOD_LSFT|MOD_RSFT)>; };  /* ę Ę */
+        lt_ee: lt_ee { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&lt_ee_lo>, <&lt_ee_up>; mods = <(MOD_LSFT|MOD_RSFT)>; };  /* ė Ė */
+        lt_i: lt_i { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&lt_i_lo>, <&lt_i_up>; mods = <(MOD_LSFT|MOD_RSFT)>; };  /* į Į */
+        lt_s: lt_s { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&lt_s_lo>, <&lt_s_up>; mods = <(MOD_LSFT|MOD_RSFT)>; };  /* š Š */
+        lt_u: lt_u { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&lt_u_lo>, <&lt_u_up>; mods = <(MOD_LSFT|MOD_RSFT)>; };  /* ų Ų */
+        lt_uu: lt_uu { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&lt_uu_lo>, <&lt_uu_up>; mods = <(MOD_LSFT|MOD_RSFT)>; };  /* ū Ū */
+        lt_z: lt_z { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&lt_z_lo>, <&lt_z_up>; mods = <(MOD_LSFT|MOD_RSFT)>; };  /* ž Ž */
     };
 
     keymap {
